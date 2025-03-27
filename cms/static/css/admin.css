@@ -1,0 +1,228 @@
+/* General styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    overflow-x: hidden;
+}
+
+/* Admin Dashboard Layout */
+.admin-dashboard {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 12px;
+    border-bottom: 1px solid #444;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: #34495e;
+    color: #1abc9c;
+    padding-left: 10px;
+    transition: 0.3s;
+}
+
+/* Content Section */
+.content {
+    margin-left: 270px;
+    padding: 20px;
+    flex-grow: 1;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+/* Card styling */
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+/* Search Bar */
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-bar:focus {
+    border-color: #1abc9c;
+    box-shadow: 0 0 8px rgba(26, 188, 156, 0.5);
+    outline: none;
+}
+
+/* User & File Items */
+.user-item, .file-item {
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 12px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.user-item:hover, .file-item:hover {
+    transform: scale(1.02);
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Buttons */
+.delete-btn, .view-btn, .upload-btn {
+    border: none;
+    padding: 7px 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.delete-btn {
+    background: red;
+    color: white;
+}
+
+.view-btn {
+    background: blue;
+    color: white;
+    text-decoration: none;
+}
+
+.upload-btn {
+    background: green;
+    color: white;
+}
+
+.delete-btn:hover, .view-btn:hover, .upload-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Logout Button */
+.logout {
+    display: block;
+    margin-top: 20px;
+    background: red;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.logout:hover {
+    background: darkred;
+}
+
+/* Section Slide Animation */
+#users-section, #files-section {
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    transform: translateX(-50px);
+    display: none;
+}
+
+#users-section.active, #files-section.active {
+    opacity: 1;
+    transform: translateX(0);
+    display: block;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.sidebar {
+    transition: all 0.3s ease-in-out;
+}
+.sidebar ul li a:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.card {
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(10px);
+}
+.card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.upload-btn, .delete-btn, .view-btn {
+    transition: all 0.2s ease-in-out;
+}
+.upload-btn:hover {
+    background: darkgreen;
+    transform: scale(1.05);
+}
+.view-btn:hover {
+    background: darkblue;
+    transform: scale(1.05);
+}
+.delete-btn:hover {
+    background: darkred;
+    transform: scale(1.05);
+}
